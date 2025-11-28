@@ -3,56 +3,240 @@
 <head>
   <meta charset="UTF-8">
   <title>I Love Jars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <style>
+    :root {
+      --bg: #faf6ef;
+      --card: #ffffff;
+      --accent: #c98e5d;
+      --accent-soft: #f0dfc9;
+      --text-main: #333333;
+      --text-soft: #555555;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #faf6ef;
-      color: #333;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
     }
 
     header {
-      text-align: center;
-      padding: 50px 20px;
+      padding: 24px 18px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      background: rgba(250,246,239,0.9);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      font-size: 1.6rem;
+    }
+
+    nav a {
+      margin-left: 14px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 18px 60px;
+    }
+
+    .hero {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
     }
 
     h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
+      margin: 16px 0 8px;
+      font-size: clamp(2.4rem, 4vw, 3rem);
     }
 
-    p.subtitle {
-      font-size: 1.3rem;
-      color: #555;
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-soft);
+      max-width: 520px;
     }
 
-    .content {
-      max-width: 700px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 20px;
+      margin-top: 32px;
     }
 
-    h2 {
+    @media (max-width: 720px) {
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 18px 18px 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
       margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin-top: 4px;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3eee3;
+      margin-right: 6px;
+      margin-top: 4px;
+    }
+
+    .link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--accent);
+      margin-top: 6px;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 18px 26px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>I Love Jars</h1>
-    <p class="subtitle">A tiny corner of the internet dedicated to jars, coziness, creativity, and pickling chaos.</p>
+    <div class="header-inner">
+      <div class="logo"><span>🫙</span> I Love Jars</div>
+      <nav>
+        <a href="#diary">Jar diary</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
   </header>
 
-  <div class="content">
-    <h2>Welcome</h2>
-    <p>This is my anonymous creative space where I talk about jars, pickling experiments, jar aesthetics, and whatever small joys come to mind.</p>
-    <p>More pages coming soon ✨</p>
-  </div>
+  <main>
+    <section class="hero">
+      <div class="tag">Tiny corner of the internet</div>
+      <h1>An anonymous little shrine to jars</h1>
+      <p class="subtitle">
+        A cozy space for pickles, pantry experiments, glass aesthetics,
+        and whatever else happens to be living in jars right now.
+      </p>
+    </section>
+
+    <section class="grid" id="diary">
+      <article class="card">
+        <h2>Jar diary</h2>
+        <p>
+          Quiet thoughts, tiny joys, and jar-related chaos. This can be
+          anything: what you made, what you’re storing, how you’re feeling.
+        </p>
+        <p><strong>Latest entry</strong></p>
+        <p><em>“Today I bought a jar I absolutely did not need. I’m calling it character development.”</em></p>
+        <a class="link" href="#diary">More diary entries coming soon →</a>
+      </article>
+
+      <aside class="card" id="projects">
+        <h2>Jar projects</h2>
+        <p>Ideas currently rattling around in glass:</p>
+        <div class="pill">pickled cucumber experiments</div>
+        <div class="pill">overnight oat lineup</div>
+        <div class="pill">jar of coins & relics</div>
+        <div class="pill">“chaos jar” of random notes</div>
+      </aside>
+    </section>
+
+    <section class="card" id="about" style="margin-top:24px;">
+      <h2>About this place</h2>
+      <p>
+        This site is intentionally quiet and a little bit anonymous.
+        No real names, no pressure, just a small creative corner to collect
+        things in jars – recipes, feelings, projects, memories.
+      </p>
+      <p>
+        If you somehow stumbled in here: hi. I hope you also have at least
+        one object in your home that is objectively “too many jars” and
+        that you’re keeping it anyway.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Made by someone who really, really loves jars.
+  </footer>
 </body>
 </html>
