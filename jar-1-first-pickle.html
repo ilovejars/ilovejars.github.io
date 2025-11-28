@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jar #1 · My First Ever Pickle · I Love Jars</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    :root {
+      --bg: #f3f6f1;
+      --bg-card: #ffffff;
+      --accent: #4f7b5c;
+      --accent-soft: #d6e4d4;
+      --accent-soft-2: #edf3ea;
+      --text-main: #243127;
+      --text-soft: #556454;
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #e4efe3 0, #f3f6f1 45%, #f8faf7 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 18px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(243,246,241,0.96), rgba(243,246,241,0.7));
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .logo span {
+      font-size: 1.4rem;
+    }
+
+    nav a {
+      margin-left: 14px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+
+    nav a:hover {
+      background: var(--accent-soft-2);
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 26px 18px 40px;
+    }
+
+    .eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+    }
+
+    h1 {
+      margin: 10px 0 4px;
+      font-size: clamp(2rem, 3vw, 2.5rem);
+    }
+
+    .meta-line {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      background: var(--accent-soft-2);
+      color: var(--accent);
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-left: 6px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 16px 18px 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+      border: 1px solid rgba(0,0,0,0.03);
+      margin-bottom: 18px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin-top: 6px;
+      margin-bottom: 8px;
+      font-size: 0.96rem;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin-top: 4px;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .pill {
+      font-size: 0.76rem;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft-2);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 6px;
+    }
+
+    .stats-table th,
+    .stats-table td {
+      padding: 6px 4px;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      text-align: left;
+    }
+
+    .stats-table th {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-soft);
+    }
+
+    .back-link {
+      margin-top: 20px;
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    .back-link a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: 14px 14px;
+      }
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav a {
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <span>🫙</span>
+      <div>Jar #1 · First pickle</div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="diary.html">Diary</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="eyebrow">Jar diary entry</div>
+  <h1>My first ever pickle jar</h1>
+  <div class="meta-line">
+    Jar #1 · Date: <span>November 2025</span>
+    <span class="tag">pickle log</span>
+  </div>
+
+  <!-- Diary blurb -->
+  <section class="card">
+    <h2>Little life snapshot</h2>
+    <p>
+      Tonight I finally did it: I bought a jar, sliced some cucumbers, and committed
+      them to brine. It felt a bit like a science experiment and a bit like self-care —
+      quiet kitchen, cutting board, vinegar smell, and the tiny thrill of making
+      something that doesn’t need anyone else to approve of it.
+    </p>
+    <p>
+      I want this space to be where I keep track of these tiny projects: what I put
+      in jars, how they turn out, and what was going on in my head at the time.
+    </p>
+  </section>
+
+  <!-- Recipe -->
+  <section class="card">
+    <h2>The recipe</h2>
+    <p><strong>Base idea:</strong> simple dill cucumber pickles, first attempt.</p>
+
+    <p><strong>Ingredients</strong> (adjust to what you actually used later):</p>
+    <ul>
+      <li>1 medium jar, cleaned</li>
+      <li>2–3 small cucumbers, sliced into spears or coins</li>
+      <li>1 cup water</li>
+      <li>1 cup white vinegar (or mix with rice/apple cider vinegar)</li>
+      <li>1–1.5 tbsp salt (non-iodized)</li>
+      <li>1–2 tsp sugar (optional, for balance)</li>
+      <li>Fresh dill sprigs</li>
+      <li>2–3 garlic cloves, lightly smashed</li>
+      <li>Black peppercorns, red pepper flakes, or whatever felt right</li>
+    </ul>
+
+    <p><strong>Method</strong> (update this to what you actually did):</p>
+    <ul>
+      <li>Pack cucumbers, dill, garlic, and spices into the jar.</li>
+      <li>Heat water, vinegar, salt, and sugar until the salt dissolves.</li>
+      <li>Let the brine cool slightly, then pour over the cucumbers to cover.</li>
+      <li>Tap out air bubbles, seal the jar, and put it in the fridge.</li>
+      <li>Taste after 24–48 hours, then again after a few days.</li>
+    </ul>
+  </section>
+
+  <!-- Physics / science bit -->
+  <section class="card">
+    <h2>Science note: what the salt is actually doing</h2>
+    <p>
+      At the simplest level, the salt in the brine is doing two big things:
+    </p>
+    <ul>
+      <li>
+        <strong>Osmosis:</strong> Salt outside the cucumber draws water out of the cells
+        and lets flavorful brine move in. This is why the cucumbers shrink a little and
+        start tasting like the brine.
+      </li>
+      <li>
+        <strong>Microbe management:</strong> In certain ranges, salt helps suppress the
+        less-fun microbes and gives an advantage to the ones we actually want, especially
+        in fermented pickles.
+      </li>
+    </ul>
+    <p>
+      It’s basically a tiny diffusion experiment in glass. Somewhere, my physics brain
+      is quietly pleased.
+    </p>
+  </section>
+
+  <!-- Stats -->
+  <section class="card">
+    <h2>Jar stats (first tasting)</h2>
+    <p>Update these once you taste it:</p>
+    <table class="stats-table">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Score (0–10)</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Crispiness</td>
+          <td>7</td>
+          <td>Still has a nice snap, but could be crisper.</td>
+        </tr>
+        <tr>
+          <td>Saltiness</td>
+          <td>5</td>
+          <td>Middle of the road — maybe a pinch more next time.</td>
+        </tr>
+        <tr>
+          <td>Dill intensity</td>
+          <td>8</td>
+          <td>Dill is definitely present, in a good way.</td>
+        </tr>
+        <tr>
+          <td>Garlic vibe</td>
+          <td>6</td>
+          <td>Could add one more clove if I’m feeling bold.</td>
+        </tr>
+        <tr>
+          <td>Overall joy</td>
+          <td>9</td>
+          <td>It felt really good to make this.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="pill-row">
+      <div class="pill">fridge pickles</div>
+      <div class="pill">first experiment</div>
+      <div class="pill">baseline recipe</div>
+    </div>
+  </section>
+
+  <!-- Taste notes -->
+  <section class="card">
+    <h2>Taste notes & what I’d change next time</h2>
+    <p>
+      Write a few lines here once you’ve actually tried them — what surprised you,
+      what you loved, and what you’d tweak for Jar #2. This can be as nerdy or as
+      emotional as you want.
+    </p>
+  </section>
+
+  <p class="back-link">
+    ← <a href="diary.html">Back to diary</a>
+  </p>
+</main>
+
+</body>
+</html>
